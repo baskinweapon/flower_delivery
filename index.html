@@ -22,8 +22,11 @@
       </div>
     </div>
     <div id="unity-fullscreen-button" style="display: none;"></div>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
+        const jsConfetti = new JSConfetti();
+        jsConfetti.addConfetti();
         // Init TWA
         Telegram.WebApp.ready();
 
@@ -37,6 +40,7 @@
             text: 'Main Button'
         });
         Telegram.WebApp.MainButton.onClick(function () {
+            Telegram.WebApp.
             Telegram.WebApp.showAlert('Main Button was clicked')
         });
         Telegram.WebApp.MainButton.show();
