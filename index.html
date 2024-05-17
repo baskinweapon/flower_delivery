@@ -36,14 +36,16 @@
         Telegram.WebApp.onEvent('themeChanged', function() {
             document.documentElement.className = Telegram.WebApp.colorScheme;
         });
-
+        
         // Show main button
         Telegram.WebApp.MainButton.setParams({
-            text: 'Main Button'
+            text: 'Order'
         });
+    
         Telegram.WebApp.MainButton.onClick(function () {
-            Telegram.WebApp.
-            Telegram.WebApp.showAlert('Main Button was clicked')
+            SendMessage('WebGlTransport', 'ClickMainButton');
+<!--            Telegram.WebApp.-->
+<!--            Telegram.WebApp.showAlert('Main Button was clicked')-->
         });
 <!--        Telegram.WebApp.MainButton.show();-->
 
@@ -62,7 +64,7 @@
                 }
             });
         };
-
+        
         // Function to toggle main TWA button
         function toggleMainButton() {
             if (Telegram.WebApp.MainButton.isVisible) {
